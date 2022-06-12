@@ -8,4 +8,5 @@ router.register('service_area',views.ServiceAreaViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('check_availability/<int:lat>/<int:lng>',views.CheckAvailabilityList.as_view())
 ]
