@@ -12,7 +12,7 @@ class Provider(models.Model):
 
 class ServiceArea(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    provider = models.ForeignKey(to=Provider, on_delete=models.CASCADE)
+    provider = models.ForeignKey(to=Provider, related_name="service_areas", on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     price = models.PositiveIntegerField()
     geojson_information = gis_models.PolygonField()

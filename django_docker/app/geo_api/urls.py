@@ -1,10 +1,11 @@
-from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
-from geo_api import views
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from . import views
+
+router = DefaultRouter()
+router.register('provider',views.ProviderViewSet)
+router.register('service_area',views.ServiceAreaViewSet)
 
 urlpatterns = [
-    path('providers/', views.ProviderList.as_view()),
-    path('service_area', views.ServiceAreaList.as_view()),
+    path('', include(router.urls)),
 ]
-
-urlpatterns = format_suffix_patterns(urlpatterns)
