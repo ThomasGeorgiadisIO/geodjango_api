@@ -32,7 +32,10 @@ class ServiceAreaViewSet(viewsets.ModelViewSet):
     queryset = ServiceArea.objects.all()
     serializer_class = ServiceAreaSerializer
     filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
-    filter_fields = ('__all__')
+    filter_fields = (
+        'name',
+        'price',
+    )
     search_fields = ("name",)
 
     @method_decorator(cache_page(60 * 60 * 1))

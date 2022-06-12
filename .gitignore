@@ -1,0 +1,4 @@
+/django_docker/app/env/*
+.vscode
+*.pyc
+*.yapf
