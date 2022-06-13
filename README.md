@@ -17,7 +17,7 @@ docker-compose build
 
 docker-compose up -d
 
- !in case of error! check geodjango_api/django_docker/app/entrypoint.sh encoding. Should be LF and not CRLF.
+ !in case of web service not running! change geodjango_api/django_docker/app/entrypoint.sh encoding from CRLF to LF with any text editor.
 
 ## DOCUMENTATION
 http://localhost:8000/api/schema/redoc/
