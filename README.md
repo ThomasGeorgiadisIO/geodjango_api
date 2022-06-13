@@ -21,3 +21,13 @@ docker-compose up -d
 
 ## DOCUMENTATION
 http://localhost:8000/api/schema/redoc/
+
+Documentation auto identifies geojson field as string. It is a PolygonField and accepts geojson like:
+
+{
+  type : "Polygon",
+  coordinates : [
+     [ [ 0 , 0 ] , [ 3 , 6 ] , [ 6 , 1 ] , [ 0 , 0 ] ],
+     [ [ 2 , 2 ] , [ 3 , 3 ] , [ 4 , 2 ] , [ 2 , 2 ] ]
+  ]
+}
