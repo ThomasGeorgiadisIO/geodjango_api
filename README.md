@@ -8,9 +8,13 @@ ServiceArea (name, price, geojson information) at http://localhost:8000/api/serv
 http://localhost:8000/api/check_availability/{lat}/{lng} endpoint that takes a lat/lng pair as arguments and return a list of all polygons that include the given lat/lng. The name of the polygon, provider's name, and price is be returned for each polygon.
 
 ## HOW TO RUN
+
 git clone https://github.com/ThomasGeorgiadisIO/geodjango_api.git
+
 cd django_docker/
+
 docker-compose build
+
 docker-compose up -d
 
 !in case of error! check geodjango_api/django_docker/app/entrypoint.sh encoding. Should be LF and not CRLF.
