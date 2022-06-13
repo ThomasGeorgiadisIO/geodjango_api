@@ -23,6 +23,7 @@ class ProviderViewSet(viewsets.ModelViewSet):
         "phone_number",
     )
 
+    # overididing list-get method to apply caching
     @method_decorator(cache_page(60 * 60 * 1))
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
@@ -38,6 +39,7 @@ class ServiceAreaViewSet(viewsets.ModelViewSet):
     )
     search_fields = ("name",)
 
+    # overididing list-get method to apply caching
     @method_decorator(cache_page(60 * 60 * 1))
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
@@ -45,9 +47,11 @@ class ServiceAreaViewSet(viewsets.ModelViewSet):
 
 class CheckAvailabilityList(APIView):
 
+    # overiding get method to apply caching
     @method_decorator(cache_page(60 * 60 * 1))
     def get(self, request, lat, lng):
         point = Point(lat, lng)
+        # django gis provides orm __contains checks if a point is inside a polygon in postgis
         service_areas = ServiceArea.objects.filter(geojson_information__contains=point)
         serializer = AvailabilitySerializer(service_areas, many=True)
         return Response(serializer.data)
