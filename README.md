@@ -17,7 +17,9 @@ docker-compose build
 
 docker-compose up -d
 
- !in case of web service not running! change geodjango_api/django_docker/app/entrypoint.sh encoding from CRLF to LF with any text editor.
+ !in case of web service not running with console message: standard_init_linux.go:228: exec user process caused: no such file or directory! 
+ 
+ Change geodjango_api/django_docker/app/entrypoint.sh encoding from CRLF to LF with any text editor.
 
 ## DOCUMENTATION
 http://localhost:8000/api/schema/redoc/
