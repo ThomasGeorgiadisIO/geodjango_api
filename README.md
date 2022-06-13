@@ -11,7 +11,7 @@ http://localhost:8000/api/check_availability/{lat}/{lng} endpoint that takes a l
 
 git clone https://github.com/ThomasGeorgiadisIO/geodjango_api.git
 
-cd django_docker/
+cd geodjango_api/django_docker/
 
 docker-compose build
 
