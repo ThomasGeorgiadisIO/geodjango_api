@@ -9,7 +9,7 @@ class Provider(models.Model):
     email = models.EmailField(max_length=254)
     phone_number = models.CharField(max_length=15)
     language = models.CharField(max_length=15)
-    currency = models.CharField(max_length=2)
+    currency = models.CharField(max_length=3)
 
 
 class ServiceArea(models.Model):
